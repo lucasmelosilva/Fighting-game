@@ -25,17 +25,39 @@ const shop = new Sprite({
 })
 
 const player = new Fighter({
-  position: { x: 0, y: 0 },
-  velocity: { x: 0, y: 0 },
-  offset: { x: 0, y: 0 },
-  color: 'blue'
-})
+  position: {
+    x: 0,
+    y: 0
+  },
+  velocity: {
+    x: 0,
+    y: 0
+  },
+  offsetAttack: {
+    x: 0,
+    y: 0
+  },
+  offset: {
+    x: 215,
+    y: 157
+  },
+  imageSrc: './images/samuraiMack/Idle.png',
+  framesMax: 8,
+  scale: 2.5
 
+})
 
 const enemy = new Fighter({
   position: { x: 400, y: 50 },
   velocity: { x: 0, y: 0 },
   offset: { x: -50, y: 0 },
+  offsetAttack: {
+    x: 0,
+    y: 0
+  },
+  imageSrc: './images/kenji/Idle.png',
+  framesMax: 4,
+  scale: 2.5
 })
 
 function render() {
@@ -44,7 +66,7 @@ function render() {
   background.update(ctx)
   shop.update(ctx)
   player.update(ctx)
-  enemy.update(ctx)
+  // enemy.update(ctx)
   collision()
 }
 
